@@ -1,0 +1,63 @@
+.Buttons {
+  width: 530px;
+
+  button {
+    cursor: pointer;
+    background: #cfd8dc;
+    outline: none;
+    border: 1px solid #78909c;
+    width: 120px;
+    height: 30px;
+    color: #212121;
+    font-size: 16px;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background: lighten($color: #cfd8dc, $amount: 8);
+    }
+  }
+}
+
+.newGameWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  .difficultyForm {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .formLabel {
+    cursor: pointer;
+    background: #dff9fb;
+    border: 1px solid #78909c;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #212121;
+    font-size: 16px;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background: lighten($color: #dff9fb, $amount: 5);
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    &:checked + label {
+      background: darken($color: #dff9fb, $amount: 15);
+    }
+  }
+}
+
+.utilityButtonsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
