@@ -57,13 +57,22 @@ class App extends Component {
     if (solution) {
       this.setState({ board: solution });
     } else {
+      this.setState({ renderInfo: true });
+      this.setState({
+        infoText: 'Sorry, you are following the wrong path...'
+      });
+      setTimeout(() => this.setState({ renderInfo: false }), 3000);
     }
   };
 
   checkSolution = () => {
     const isSolved = sudoku.solve(this.state.board);
     this.setState({ renderInfo: true });
-    if (isSolved) {
+    if (isSolved && !this.state.board.includes('.')) {
+      this.setState({
+        infoText: 'Congratulations! You solved the puzzle!'
+      });
+    } else if (isSolved) {
       this.setState({
         infoText: 'You are on the right way to win!'
       });
